@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\employee;
 use Illuminate\Http\Request;
-use Nette\Utils\Image;
+use Intervention\Image\Facades\Image;
 
 class EmployeeController extends Controller
 {
@@ -39,26 +39,14 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:employees|max:255',
+            'name' => 'required',
             'email' => 'required',
-            'phone' => 'required|unique:employees',
+            'phone' => 'required',
             'salary' => 'required',
             'address' => 'required',
             'nid' => 'required',
             'joinig_date' => 'required',
         ]);
-
-
-        $employee = new employee();
-        $employee->name        = $request->name;
-        $employee->email       = $request->email;
-        $employee->phone       = $request->phone;
-        $employee->salary      = $request->salary;
-        $employee->address     = $request->address;
-        $employee->nid         = $request->nid;
-        $employee->joinig_date = $request->joinig_date;
-        $employee->save();
-
 
         if($request->photo)
         {
@@ -68,7 +56,7 @@ class EmployeeController extends Controller
 
             $name = time().".".$ext;
             $img = Image::make($request->photo)->resize(240,200);
-            $upload_path = 'backend/employee/';
+            $upload_path = '/backend/employee/';
             $image_url = $upload_path.$name;
             $img->save($image_url);
 
@@ -103,7 +91,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee = employee::find($id);
+        return response()->json($employee);
     }
 
     /**
@@ -126,7 +115,15 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee = employee::find($id);
+        $employee->name        = $request->name;
+        $employee->email       = $request->email;
+        $employee->phone       = $request->phone;
+        $employee->salary      = $request->salary;
+        $employee->address     = $request->address;
+        $employee->nid         = $request->nid;
+        $employee->joinig_date = $request->joinig_date;
+        $employee->save();
     }
 
     /**
@@ -137,6 +134,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = employee::find($id);
+        $employee->delete();
     }
 }

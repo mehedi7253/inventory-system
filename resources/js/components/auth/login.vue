@@ -6,32 +6,33 @@
                     <h1 class="text-center">Login</h1>
                 </div>
                 <div class="card-body">
-                    <form @submit.prevent="login">
+                   <form class="user" @submit.prevent="login">
                         <div class="form-group">
-                            <label>Email: </label>
-                            <input type="email" v-model="form.email" placeholder="Enter Email" class="form-control">
-                            <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address" v-model="form.email">
+                            <small class="text-danger" v-if="errors.email"> {{ errors.email[0] }} </small>
                         </div>
                         <div class="form-group">
-                            <label>Password: </label>
-                            <input type="password" v-model="form.password" placeholder="Enter Email" class="form-control">
-                            <span class="text-danger" v-if="errors.password">{{ errors.password[0] }}</span>
+                            <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" v-model="form.password">
+                            <small class="text-danger" v-if="errors.password"> {{ errors.password[0] }} </small>
                         </div>
-                        <div class="form-group ml-4">
-                             <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                            <label class="form-check-label" for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"> Login</button>
-                            <router-link to="/forget" class="btn btn-link">Forgot Your Password?</router-link>
+                            <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
+                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                <label class="custom-control-label" for="customCheck">Remember
+                                Me</label>
+                            </div>
                         </div>
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login </button>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <router-link to="/registers" class="font-weight-bold small">Create an Account!</router-link>
+                        </div>
+                        <div class="text-center">
+                            <router-link to="/forget" class="font-weight-bold small">Forget Password</router-link>
+                         </div>
                     </form>
-                </div>
-                 <div class="card-footer">
-                   <router-link to="/registers" class="btn float-right btn-info">Create New Account</router-link>
                 </div>
             </div>
         </div>
