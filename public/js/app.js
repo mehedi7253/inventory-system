@@ -5526,7 +5526,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    if (!User.loogedIn()) {
+    if (!User.loggedIn()) {
       this.$router.push({
         name: '/'
       });
@@ -5604,7 +5604,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$data$created = {
   created: function created() {
-    if (!User.loogedIn()) {
+    if (!User.loggedIn()) {
       this.$router.push({
         name: '/'
       });
@@ -5698,7 +5698,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
-    if (!User.loogedIn()) {
+    if (!User.loggedIn()) {
       this.$router.push({
         name: '/'
       });
@@ -6256,7 +6256,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    if (!User.loogedIn()) {
+    if (!User.loggedIn()) {
       this.$router.push({
         name: '/'
       });
@@ -6358,7 +6358,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$data$created = {
   created: function created() {
-    if (!User.loogedIn()) {
+    if (!User.loggedIn()) {
       this.$router.push({
         name: '/'
       });

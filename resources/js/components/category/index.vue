@@ -36,7 +36,7 @@
 <script>
     export default {
         created(){
-            if(!User.loogedIn())
+            if(!User.loggedIn())
             {
                 this.$router.push({ name: '/' })
             }
