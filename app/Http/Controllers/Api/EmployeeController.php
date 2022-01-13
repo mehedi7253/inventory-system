@@ -48,8 +48,10 @@ class EmployeeController extends Controller
             'joinig_date' => 'required',
         ]);
 
-        if($request->photo)
-        {
+
+
+        if($request->photo){
+
             $position = strpos($request->photo, ';');
             $sub = substr($request->photo, 0, $position);
             $ext = explode('/', $sub)[1];
@@ -68,19 +70,9 @@ class EmployeeController extends Controller
             $employee->address     = $request->address;
             $employee->nid         = $request->nid;
             $employee->joinig_date = $request->joinig_date;
-            $employee->photo       = $image_url;
-            $employee->save();
-        }else{
-            $employee = new employee();
-            $employee->name        = $request->name;
-            $employee->email       = $request->email;
-            $employee->phone       = $request->phone;
-            $employee->salary      = $request->salary;
-            $employee->address     = $request->address;
-            $employee->nid         = $request->nid;
-            $employee->joinig_date = $request->joinig_date;
             $employee->save();
         }
+
     }
 
     /**
