@@ -65,6 +65,20 @@
                 </div>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
+                  aria-expanded="true" aria-controls="collapseBootstrap">
+                  <i class="far fa-fw fa-window-maximize"></i>
+                  <span>Categories</span>
+                </a>
+                <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <router-link class="collapse-item" to="/store-category" >Add Categories</router-link>
+                    <router-link class="collapse-item" to="/category" >Manage Categories</router-link>
+                  </div>
+                </div>
+              </li>
+
             </ul>
             <!-- Sidebar -->
             <div id="content-wrapper" class="d-flex flex-column">
