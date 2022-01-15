@@ -3,7 +3,7 @@
         <div class="col-md-12 mx-auto mb-5">
             <div class="card">
                 <div class="card-header">
-                    <h3>All Product <router-link class="btn btn-primary float-right" to="/store-product">Add Products</router-link></h3>
+                    <h3>Stock <router-link class="btn btn-primary float-right" to="/store-product">Add Products</router-link></h3>
                 </div>
                 <div class="card-body">
                      <input type="text" v-model="searchTerm" class="form-control" style="width: 300px;" placeholder="Search Here">

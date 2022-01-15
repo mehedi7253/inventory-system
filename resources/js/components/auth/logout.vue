@@ -1,8 +1,13 @@
+
+
 <template>
 
 </template>
 
-<script>
+
+
+<script type="text/javascript">
+
 export default {
    created(){
     localStorage.removeItem('token')
@@ -14,10 +19,16 @@ export default {
     this.$router.push({ name: '/'})
 
    }
+
+
 }
+
+
+
+
 </script>
 
-<style scoped>
 
-</style>>
+<style type="text/css">
 
+</style>

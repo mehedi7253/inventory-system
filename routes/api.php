@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\ExpenseController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\StockController;
 use App\Http\Controllers\Api\SupplierController;
@@ -40,3 +41,4 @@ Route::apiResource('supplier', SupplierController::class);
 Route::apiResource('category', CategoryController::class);
 Route::apiResource('product', ProductController::class);
 Route::apiResource('stock', StockController::class);
+Route::apiResource('expense', ExpenseController::class);
