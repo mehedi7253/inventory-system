@@ -69,5 +69,5 @@ export const routes = [
     //expense
     { path: '/store-expense', component: storeexpense, name: 'store-expense'},
     { path: '/expense', component: expense, name: 'expense'},
-    { path: '/edit-expense', component: editexpense, name: 'edit-expense'},
+    { path: '/edit-expense/:id', component: editexpense, name: 'edit-expense'},
   ]
