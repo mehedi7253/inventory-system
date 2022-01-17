@@ -23,7 +23,7 @@
                             <label class="text-danger" v-if="errors.details">{{ errors.details[0] }}</label>
                         </div>
                         <div class="form-group col-4 float-left">
-                            <input type="submit" name="btn" value="Submit" class="btn btn-block btn-success">
+                            <input type="submit" name="btn" value="Update" class="btn btn-block btn-success">
                         </div>
                     </form>
                 </div>

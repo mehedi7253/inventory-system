@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\ExpenseController;
 use App\Http\Controllers\Api\ProductController;
@@ -42,3 +43,4 @@ Route::apiResource('category', CategoryController::class);
 Route::apiResource('product', ProductController::class);
 Route::apiResource('stock', StockController::class);
 Route::apiResource('expense', ExpenseController::class);
+Route::apiResource('customer', CustomerController::class);
