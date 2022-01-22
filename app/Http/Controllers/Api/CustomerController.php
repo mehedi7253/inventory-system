@@ -72,8 +72,8 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customer = customer::find($id);
-        return response()->json($customer);
+        $customers = customer::find($id);
+        return response()->json($customers);
     }
 
     /**

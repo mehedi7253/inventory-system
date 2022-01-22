@@ -26,6 +26,7 @@ const router = new VueRouter({
 
   //sweet alert start
     import Swal from 'sweetalert2';
+import Vue from 'vue';
     window.Swal = Swal;
 
     const Toast = Swal.mixin({
@@ -46,6 +47,7 @@ const router = new VueRouter({
       })
 
       window.Toast = Toast;
+      window.Reload = new Vue();
   //sweet alert end
 const app = new Vue({
     el: '#app',

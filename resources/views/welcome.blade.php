@@ -33,6 +33,13 @@
                   <i class="fas fa-fw fa-tachometer-alt"></i>
                   <span>Dashboard</span></router-link>
               </li>
+              <hr class="sidebar-divider my-0">
+              <li class="nav-item active">
+                <router-link class="nav-link" to="/pos">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Pos</span>
+                </router-link>
+              </li>
               <hr class="sidebar-divider">
               <div class="sidebar-heading">
                 Features
