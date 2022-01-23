@@ -55,14 +55,14 @@
                             <strong>{{ qty }}</strong>
                             </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">Sub Total:
-                            <strong>562 $</strong>
+                            <strong>{{ subtotal }} </strong>
                             </li>
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">Vat:
                             <strong>{{ vats.vat }} %</strong>
                             </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">Total :
-                            <strong>5456 $</strong>
+                            <strong>{{ subtotal*vats.vat /100 + subtotal}} </strong>
                             </li>
                         </ul>
                         <br>
@@ -207,19 +207,27 @@
                 })
             },
             getfiltersearch(){
-            return this.getproducts.filter(getproduct => {
-                return getproduct.product_name.match(this.getsearchTerm)
-            })
-        },
+                return this.getproducts.filter(getproduct => {
+                    return getproduct.product_name.match(this.getsearchTerm)
+                })
+            },
+             qty(){
+                let sum = 0;
+                    for(let i = 0; i < this.carts.length; i++){
+                        sum += (parseFloat(this.carts[i].pro_quantity));
+                    }
+                return sum;
+            },
+            subtotal(){
+                let sum = 0;
+                for(let i = 0; i < this.carts.length; i++){
+                    sum += (parseFloat(this.carts[i].pro_quantity) * parseFloat(this.carts[i].product_price));
+                }
+                return sum;
+            },
     },
 
-    qty(){
-    let sum = 0;
-        for(let i = 0; i < this.carts.length; i++){
-            sum += (parseFloat(this.carts[i].pro_quantity));
-        }
-        return sum;
-    },
+
 
      methods:{
         allProduct(){
