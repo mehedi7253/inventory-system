@@ -66,17 +66,17 @@
                             </li>
                         </ul>
                         <br>
-                        <form>
+                        <form @submit.prevent="orderdone">
                             <label>Customer Name</label>
                             <select class="form-control" v-model="customer_id">
-                                    <option v-for="customer in customers" :key="customer.id" >{{ customer.name }}</option>
+                                    <option v-for="customer in customers" :key="customer" :value="customer.id" >{{ customer.name }}</option>
                             </select>
                             <label>Pay</label>
                             <input type="text" class="form-control" required="" v-model="pay">
                             <label>Due</label>
                             <input type="text" class="form-control" required="" v-model="due">
                             <label>Pay By</label>
-                            <select class="form-control" v-model="customer_id">
+                            <select class="form-control" v-model="pay_by">
                                     <option value="HandCash">Hand Cash </option>
                                     <option value="Cheaque">Cheaque </option>
                                     <option value="GiftCard">Gift Card </option>
@@ -188,6 +188,11 @@
 
     data(){
       return{
+        customer_id: '',
+        pay: '',
+        due: '',
+        pay_by: '',
+
         products:[],
         categories:'',
         getproducts:[],
@@ -285,7 +290,7 @@
                     Reload.$emit('AfterAdd');
                     Toast.fire({
                         icon: 'success',
-                        title: 'Quantity Susccessful'
+                        title: 'Quantity Update Susccessful'
                     })
                 })
             .catch()
@@ -304,6 +309,21 @@
         vat(){
             axios.get('/api/vat/')
             .then(({data}) => (this.vats = data))
+            .catch()
+        },
+
+        orderdone(){
+            let total = this.subtotal*this.vats.vat /100 + this.subtotal;
+            var data = { qty:this.qty, subtotal:this.subtotal, customer_id:this.customer_id, pay:this.pay, due:this.due, pay_by:this.pay_by, vat:this.vats.vat, total:total }
+
+            axios.post('/api/orderdone', data)
+            this.$router.push({name: 'homes'})
+            .then(() => {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Order Susccessful',
+                })
+            })
             .catch()
         }
 

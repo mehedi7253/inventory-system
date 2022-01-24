@@ -37,6 +37,7 @@ let editexpense   = require('./components/expense/edit.vue').default;
 let storecustomer = require('./components/customer/create.vue').default;
 let customer      = require('./components/customer/index.vue').default;
 let viewcustomer  = require('./components/customer/profile.vue').default;
+let order         = require('./components/order/order.vue').default;
 
 //pos
 let pos = require('./components/pos/pointofsale.vue').default;
@@ -85,4 +86,5 @@ export const routes = [
 
     //pos
     { path: '/pos', component: pos, name: 'pos'},
+    { path: '/order', component: order, name: 'order'},
   ]

@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\ExpenseController;
+use App\Http\Controllers\Api\orderController;
 use App\Http\Controllers\Api\PosController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\StockController;
@@ -57,3 +58,5 @@ Route::get('/remove/cart/{id}', [CartController::class, 'removeCart'])->name('re
 Route::get('/increment/{id}', [CartController::class, 'increment'])->name('increment');
 Route::get('/decrement/{id}', [CartController::class, 'decrement'])->name('decrement');
 Route::get('/vat', [CartController::class, 'vats'])->name('vat');
+Route::post('/orderdone', [PosController::class, 'orderDone'])->name('orderdone');
+Route::get('/orders', [orderController::class, 'todayOrder'])->name('orderdone');
